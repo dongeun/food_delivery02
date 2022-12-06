@@ -2,6 +2,7 @@ package mallkde.domain;
 
 import mallkde.domain.OederCanceled;
 import mallkde.domain.OrderPleaced;
+import mallkde.domain.OrderPleaced;
 import mallkde.AppApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -74,6 +75,11 @@ public class Order  {
         OrderPleaced orderPleaced = new OrderPleaced(this);
         orderPleaced.publishAfterCommit();
 
+
+
+        OrderPleaced orderPleaced = new OrderPleaced(this);
+        orderPleaced.publishAfterCommit();
+
     }
 
     public static OrderRepository repository(){
@@ -83,11 +89,6 @@ public class Order  {
 
 
 
-    public void createOrder(){
-        OrderPleaced orderPleaced = new OrderPleaced(this);
-        orderPleaced.publishAfterCommit();
-
-    }
 
 
 
