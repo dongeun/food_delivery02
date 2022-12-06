@@ -47,7 +47,7 @@ public class OrderstatusViewHandler {
                  Orderstatus orderstatus = orderstatusOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
                 orderstatus.setId(orderableArea.getId());    
-                orderstatus.setStatus("OrderableArea"");    
+                orderstatus.setStatus("OrderableArea");    
                 // view 레파지 토리에 save
                  orderstatusRepository.save(orderstatus);
                 }
