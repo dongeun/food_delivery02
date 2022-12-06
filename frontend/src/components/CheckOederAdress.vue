@@ -17,6 +17,13 @@
         </v-card-title >
 
         <v-card-text>
+            <Number label="OrderId" v-model="value.orderId" :editMode="editMode"/>
+            <Date label="OrderTime" v-model="value.orderTime" :editMode="editMode"/>
+            <Number label="OrderQty" v-model="value.orderQty" :editMode="editMode"/>
+            <String label="OrderSubject" v-model="value.orderSubject" :editMode="editMode"/>
+            <String label="Status" v-model="value.status" :editMode="editMode"/>
+            <Number label="CustId" v-model="value.custId" :editMode="editMode"/>
+            <String label="StoreId" v-model="value.storeId" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -186,6 +193,25 @@
             },
             change(){
                 this.$emit('input', this.value);
+            },
+            async () {
+                try {
+                    if(!this.offline) {
+                        var temp = await axios.put(axios.fixUrl(this.value._links[''].href))
+                        for(var k in temp.data) {
+                            this.value[k]=temp.data[k];
+                        }
+                    }
+
+                    this.editMode = false;
+                } catch(e) {
+                    this.snackbar.status = true
+                    if(e.response && e.response.data.message) {
+                        this.snackbar.text = e.response.data.message
+                    } else {
+                        this.snackbar.text = e
+                    }
+                }
             },
         },
     }

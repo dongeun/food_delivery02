@@ -67,8 +67,8 @@ public class Order  {
     public void onPostPersist(){
 
 
-        OederCanceled oederCanceled = new OederCanceled(this);
-        oederCanceled.publishAfterCommit();
+        //OederCanceled oederCanceled = new OederCanceled(this);
+       // oederCanceled.publishAfterCommit();
 
 
 
@@ -77,8 +77,7 @@ public class Order  {
 
 
 
-        OrderPleaced orderPleaced = new OrderPleaced(this);
-        orderPleaced.publishAfterCommit();
+        
 
     }
 

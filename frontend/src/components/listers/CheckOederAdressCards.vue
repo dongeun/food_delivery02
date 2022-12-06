@@ -68,6 +68,13 @@
             me.values = temp.data._embedded.checkOederAdresses;
             
             me.newValue = {
+                'orderId': 0,
+                'orderTime': '2022-12-06',
+                'orderQty': 0,
+                'orderSubject': '',
+                'status': '',
+                'custId': 0,
+                'storeId': '',
             }
         },
         methods:{

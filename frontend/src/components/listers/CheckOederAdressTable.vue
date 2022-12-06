@@ -66,7 +66,13 @@
             values: [],
             headers: 
                 [
-                    { text: "id", value: "id" },
+                    { text: "orderId", value: "orderId" },
+                    { text: "orderTime", value: "orderTime" },
+                    { text: "orderQty", value: "orderQty" },
+                    { text: "orderSubject", value: "orderSubject" },
+                    { text: "status", value: "status" },
+                    { text: "custId", value: "custId" },
+                    { text: "storeId", value: "storeId" },
                 ],
             checkOederAdress : [],
             newValue: {},
@@ -84,6 +90,13 @@
             this.values = temp.data._embedded.checkoederadresses;
 
             this.newValue = {
+                'orderId': 0,
+                'orderTime': '2022-12-06',
+                'orderQty': 0,
+                'orderSubject': '',
+                'status': '',
+                'custId': 0,
+                'storeId': '',
             }
         },
         methods: {
