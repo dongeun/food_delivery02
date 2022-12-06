@@ -24,7 +24,43 @@ public class CheckOederAdress  {
     
     
     
-    private Long id;
+    private Long orderId;
+    
+    
+    
+    
+    
+    private Date orderTime;
+    
+    
+    
+    
+    
+    private Integer orderQty;
+    
+    
+    
+    
+    
+    private String orderSubject;
+    
+    
+    
+    
+    
+    private String status;
+    
+    
+    
+    
+    
+    private Long custId;
+    
+    
+    
+    
+    
+    private String storeId;
 
     @PostPersist
     public void onPostPersist(){

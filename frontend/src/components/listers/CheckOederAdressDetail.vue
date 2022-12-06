@@ -5,6 +5,27 @@
         </v-card-title>
 
         <v-card-text>
+            <div>
+                <Number label="OrderId" v-model="item.orderId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Date label="OrderTime" v-model="item.orderTime" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="OrderQty" v-model="item.orderQty" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="OrderSubject" v-model="item.orderSubject" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="CustId" v-model="item.custId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="StoreId" v-model="item.storeId" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

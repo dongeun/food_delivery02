@@ -10,10 +10,22 @@
                     <v-list-item-content>
                         <v-list-item-title style="margin-bottom:10px;">
                             
+                            
+                            
+                            
+                            
+                            
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
-                            [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderId :  {{data.orderId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderTime :  {{data.orderTime }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderQty :  {{data.orderQty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderSubject :  {{data.orderSubject }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CustId :  {{data.custId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ StoreId :  {{data.storeId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -95,6 +107,13 @@
             this.values = temp.data._embedded.checkoederadresses;
             
             this.newValue = {
+                'orderId': 0,
+                'orderTime': '2022-12-06',
+                'orderQty': 0,
+                'orderSubject': '',
+                'status': '',
+                'custId': 0,
+                'storeId': '',
             }
         },
         methods: {
