@@ -59,11 +59,42 @@
 
 # 체크포인트
 ## 1. Saga(Pub/Sub)
-시나리오 1. orders로 post 요청 시 OrderPlaced로 Adress Check에 있는 Check커맨드로 요청을 전달한다.(req/res : 동기)
-그 주소 체크 후에 Paid이벤트를 거쳐 store에 있는 OrderAccepted정책으로 이벤트를 전달한다.(Pub/Sub : 비동기)
-
-구현 : Order
-
+ - 시나리오 1. orders로 post 요청 시 OrderPlaced로 Adress Check에 있는 Check커맨드로 요청을 전달한다.(req/res : 동기)
+ - 그 주소 체크 후에 Paid이벤트를 거쳐 store에 있는 OrderAccepted정책으로 이벤트를 전달한다.(Pub/Sub : 비동기)
+### 구현 : Order.
 ![image](https://user-images.githubusercontent.com/2777247/206457386-35420888-2917-402d-b6f6-1e604d0ca1d8.png)
 
+### Order 실행.
+![image](https://user-images.githubusercontent.com/2777247/206459163-0403f2be-0d05-486a-a802-d24befe67242.png)
 
+### kafka 확인.
+![image](https://user-images.githubusercontent.com/2777247/206459463-c3f55051-f2de-40a8-ac71-c4a29ee01475.png)
+
+## 2. CQRS
+ - 시나리오 3. 고객이 중간에 주문상태를 조회 하도록 CQRS를 구현한다.
+### 속성
+![image](https://user-images.githubusercontent.com/2777247/206460267-ea8d4156-81ed-474c-ac45-d84dc218a05d.png)
+
+### 구현
+![image](https://user-images.githubusercontent.com/2777247/206460958-ff74a663-ecb9-4eec-8cd3-3ee1106bd620.png)
+
+### 확인
+![image](https://user-images.githubusercontent.com/2777247/206465960-e32f103a-b38b-4293-a069-0c3c0ff03b89.png)
+
+## 3. Compensation/Correlation
+ - 시나리오 7. 고객이 취소 이벤트(OrderCanceled) 발생 시 Compensation 으로 상태 변경한다.
+
+## 4. Request / Response
+ - 시나리오 1. orders로 post 요청 시 OrderPlaced로 Adress Check에 있는 Check커맨드로 요청을 전달한다.(req/res : 동기)
+
+### Order 실행.
+![image](https://user-images.githubusercontent.com/2777247/206459163-0403f2be-0d05-486a-a802-d24befe67242.png)
+
+## 5. Circuit Breaker
+ - 구현 중
+
+## 6.Gateway / Ingress
+
+### 구현
+![image](https://user-images.githubusercontent.com/2777247/206467613-6180b191-5572-41fe-9435-9529bdfd136b.png)
+### Order 실행.
