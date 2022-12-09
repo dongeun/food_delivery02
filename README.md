@@ -47,7 +47,7 @@
     7.고객은 아직 요리가 시작되지 않은 주문은 취소할 수 있다.(ok)
     
     
-![image](https://user-images.githubusercontent.com/2777247/206429432-25d1be7c-d394-46b9-abe9-8de01d565fd6.png)
+![image](https://user-images.githubusercontent.com/2777247/206602730-6836c558-d001-4be4-98fd-b6b9ad2296d8.png)
 
     8.요리가 완료되면 고객의 지역 인근의 라이더들에 의해 배송건 조회가 가능하다.(ok)
     9.라이더가 해당 요리를 Pick한 후, 앱을 통해 통보한다.(ok)
@@ -83,6 +83,12 @@
 
 ## 3. Compensation/Correlation
  - 시나리오 7. 고객이 취소 이벤트(OrderCanceled) 발생 시 Compensation 으로 상태 변경한다.
+ ### 구현
+ ![image](https://user-images.githubusercontent.com/2777247/206602976-02b7bc50-693d-43e8-ae95-9f024250637c.png)
+ ![image](https://user-images.githubusercontent.com/2777247/206603380-dd2cbb0b-b2d3-4369-9701-1bf4fee15725.png)
+  
+ ### kafka 확인
+ ![image](https://user-images.githubusercontent.com/2777247/206603644-6ef900bb-23e4-417e-a8a3-83dec7b5418b.png)
 
 ## 4. Request / Response
  - 시나리오 1. orders로 post 요청 시 OrderPlaced로 Adress Check에 있는 Check커맨드로 요청을 전달한다.(req/res : 동기)
@@ -91,10 +97,12 @@
 ![image](https://user-images.githubusercontent.com/2777247/206459163-0403f2be-0d05-486a-a802-d24befe67242.png)
 
 ## 5. Circuit Breaker
- - 구현 중
+ - 시나리오 13. 주문 시 배달 시간을 Timeout 을 적용하여 구현한다.
+### 구현
+![image](https://user-images.githubusercontent.com/2777247/206606469-189cae69-35e2-4c05-a073-1c61dd096dd2.png)
 
 ## 6.Gateway / Ingress
 
 ### 구현
 ![image](https://user-images.githubusercontent.com/2777247/206467613-6180b191-5572-41fe-9435-9529bdfd136b.png)
-### Order 실행.
+
